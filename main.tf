@@ -10,7 +10,7 @@ module "web_app_container" {
   https_only          = "false"
   resource_group_name = "${azurerm_resource_group.myresourcegroup.name}"
   container_type      = "docker"
-  container_image     = "scarolan/palacearcade"
+  container_image     = "scarolan/pizzaplanet"
 }
 output "container_app_url" {
   value = "http://${module.web_app_container.hostname}"
