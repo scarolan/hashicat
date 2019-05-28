@@ -3,6 +3,7 @@ resource "azurerm_resource_group" "myresourcegroup" {
   location = "${var.location}"
 }
 
+variable depends_on { default = [], type = "list"}
 module "web_app_container" {
   source              = "app.terraform.io/seanc-sandbox/web-app-container/azurerm"
   depends_on          = ["${azurerm_resource_group.myresourcegroup}"]
