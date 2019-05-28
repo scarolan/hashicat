@@ -5,6 +5,7 @@ resource "azurerm_resource_group" "myresourcegroup" {
 
 module "web_app_container" {
   source              = "app.terraform.io/seanc-sandbox/web-app-container/azurerm"
+  depends_on          = "${azurerm_resource_group.myresourcegroup}"
   name                = "${var.prefix}"
   port                = "80"
   https_only          = "false"
